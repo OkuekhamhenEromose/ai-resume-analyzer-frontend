@@ -1,0 +1,25 @@
+.block {
+  border-radius: var(--r-lg); padding: 18px;
+  border: 1px solid; display: flex; flex-direction: column; gap: 14px;
+}
+.emerald { background: var(--emerald-50); border-color: rgba(16,185,129,0.2); }
+.rose    { background: var(--rose-50);    border-color: rgba(244,63,94,0.2); }
+
+.header { display: flex; align-items: flex-start; gap: 10px; }
+.icon { flex-shrink: 0; margin-top: 2px; }
+.emerald .icon { color: var(--emerald-600); }
+.rose    .icon { color: var(--rose-600); }
+
+.title {
+  font-family: var(--font-display); font-size: 14px; font-weight: 700;
+  color: var(--ink-800);
+}
+.sub { font-size: 12px; color: var(--ink-400); margin-top: 1px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  padding: 3px 11px; border-radius: 99px; font-size: 12.5px;
+  font-family: var(--font-display); font-weight: 600; border: 1px solid;
+}
+.chip_emerald { background: var(--white); color: var(--emerald-600); border-color: rgba(16,185,129,0.3); }
+.chip_rose    { background: var(--white); color: var(--rose-600);    border-color: rgba(244,63,94,0.3); }

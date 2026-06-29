@@ -1,0 +1,158 @@
+.page { display: flex; flex-direction: column; gap: 28px; }
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.pageSubtitle { font-size: 14px; color: var(--text-secondary); }
+
+/* ── Layout ──────────────────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── List ────────────────────────────────────────────────────── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 10px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 14px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid transparent;
+  color: inherit;
+  text-align: left;
+  width: 100%;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+.listItem:hover { background: var(--bg-elevated); }
+.listItemActive {
+  background: var(--primary-dim);
+  border-color: var(--border-active);
+}
+
+.listItemLeft { display: flex; align-items: center; gap: 12px; min-width: 0; }
+
+.listScore {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid;
+}
+.listScore[data-score="success"] { color: var(--success); border-color: rgba(34,197,94,0.3); background: var(--success-dim); }
+.listScore[data-score="warning"] { color: var(--warning); border-color: rgba(245,158,11,0.3); background: var(--warning-dim); }
+.listScore[data-score="danger"]  { color: var(--danger);  border-color: rgba(239,68,68,0.3);  background: var(--danger-dim); }
+
+.listMeta { min-width: 0; }
+.listRole {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.listDate { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+
+.listRight { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.chevron { color: var(--text-muted); transition: transform var(--transition); }
+.chevronOpen { transform: rotate(90deg); }
+
+/* ── Detail panel ────────────────────────────────────────────── */
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detailHeader { }
+.detailTitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+.detailDate { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); margin-top: 4px; }
+
+.gaugeWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+}
+.scoreReason { font-size: 13px; color: var(--text-secondary); text-align: center; max-width: 380px; line-height: 1.6; }
+
+.panels { display: flex; flex-direction: column; gap: 14px; }
+
+/* ── Empty ───────────────────────────────────────────────────── */
+.centered { display: flex; align-items: center; justify-content: center; height: 40vh; }
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 60vh;
+  text-align: center;
+}
+.emptyIcon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+.emptyTitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.emptyText { font-size: 14px; color: var(--text-secondary); }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+}

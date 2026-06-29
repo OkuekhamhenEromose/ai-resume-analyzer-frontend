@@ -1,0 +1,33 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--white);
+}
+
+.main {
+  flex: 1;
+}
+
+/* Full-page centred loader (shown while checking auth on mount) */
+.loaderWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--white);
+}
+
+.loader {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--indigo-600);
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

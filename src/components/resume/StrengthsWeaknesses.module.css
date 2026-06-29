@@ -1,0 +1,31 @@
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.panel {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 18px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.panelHeader { display: flex; align-items: center; gap: 8px; }
+.iconEmerald { color: var(--emerald-500); flex-shrink: 0; }
+.iconAmber   { color: var(--amber-500);   flex-shrink: 0; }
+.panelTitle {
+  font-family: var(--font-display); font-size: 14px;
+  font-weight: 700; color: var(--ink-900);
+}
+.list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.item {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 13px; color: var(--ink-600); line-height: 1.5;
+}
+.dotEmerald {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--emerald-500); flex-shrink: 0; margin-top: 5px;
+}
+.dotAmber {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--amber-500); flex-shrink: 0; margin-top: 5px;
+}
+
+@media (max-width: 620px) {
+  .grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,52 @@
+.zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--r-lg); padding: 36px 20px;
+  cursor: pointer; text-align: center;
+  transition: all var(--transition);
+  background: var(--surface);
+}
+.zone:hover:not(.disabled), .active {
+  border-color: var(--indigo-600);
+  background: var(--indigo-50);
+}
+.disabled { opacity: 0.55; cursor: not-allowed; }
+
+.inner { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.icon {
+  width: 50px; height: 50px; border-radius: 50%;
+  background: var(--white); border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--indigo-600); margin-bottom: 4px;
+  transition: all var(--transition);
+}
+.zone:hover:not(.disabled) .icon, .active .icon {
+  background: var(--indigo-600); color: #fff; border-color: var(--indigo-600);
+  transform: translateY(-2px);
+}
+.heading { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--ink-700); }
+.sub { font-size: 13px; color: var(--ink-400); }
+.browse { color: var(--indigo-600); text-decoration: underline; text-underline-offset: 2px; }
+
+/* File preview */
+.preview {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--indigo-600);
+  border-radius: var(--r-md);
+  background: var(--indigo-50);
+}
+.fileIcon { color: var(--indigo-600); flex-shrink: 0; }
+.fileInfo { flex: 1; min-width: 0; }
+.fileName {
+  display: block; font-family: var(--font-display); font-size: 14px;
+  font-weight: 600; color: var(--ink-700);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.fileSize { font-size: 12px; color: var(--ink-400); }
+.remove {
+  background: transparent; border: 1px solid var(--border);
+  border-radius: var(--r-sm); padding: 5px; display: flex;
+  align-items: center; color: var(--ink-400); transition: all var(--transition);
+  cursor: pointer; flex-shrink: 0;
+}
+.remove:hover { background: var(--rose-50); color: var(--rose-600); border-color: rgba(244,63,94,0.3); }
